@@ -267,8 +267,8 @@ def main():
     app.add_handler(conv_handler)
 
     print("🚀 Бот запущен")
-    PORT = int(os.environ.get("PORT", 8443))
 
+PORT = int(os.environ.get("PORT", 8443))
 app.run_webhook(
     listen="0.0.0.0",
     port=PORT,
@@ -279,4 +279,5 @@ app.run_webhook(
 
 if __name__ == "__main__":
     main()
+
 
