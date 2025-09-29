@@ -23,7 +23,7 @@ if DB_URL and "sslmode=" not in DB_URL:
     DB_URL += ("&sslmode=require" if "?" in DB_URL else "?sslmode=require")
 
 # ==== Админ ID ====
-ADMIN_ID = 759967778 # замени на свой Telegram ID
+ADMIN_ID = 1048694959 # замени на свой Telegram ID
 
 # ==== Состояния ====
 BROADCAST_WAITING = 1
@@ -272,4 +272,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
