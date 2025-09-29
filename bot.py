@@ -256,12 +256,13 @@ def main():
     app.add_handler(CallbackQueryHandler(button_handler))
 
     conv_handler = ConversationHandler(
-        entry_points=[CallbackQueryHandler(button_handler, pattern="^broadcast_start$")],
-        states={
-            BROADCAST_WAITING: [MessageHandler(filters.TEXT & ~filters.COMMAND, broadcast_send)]
-        },
-        fallbacks=[CommandHandler("cancel", broadcast_cancel)],
-    )
+    entry_points=[CallbackQueryHandler(button_handler, pattern="^broadcast_start$")],
+    states={
+        BROADCAST_WAITING: [MessageHandler(filters.TEXT & ~filters.COMMAND, broadcast_send)]
+    },
+    fallbacks=[CommandHandler("cancel", broadcast_cancel)],
+    per_message=True
+)
     app.add_handler(conv_handler)
 
     print("🚀 Бот запущен")
@@ -269,4 +270,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
